@@ -1,0 +1,715 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #0f0f0f;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #0f0f0f;
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-left: 30px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 50px;
+  font-family: Helvetica, sans-serif;
+  color: #fff;
+}
+
+.hero p {
+  font-family: Helvetica, sans-serif;
+  margin-top: -50px;
+  font-size: 20px;
+  color: #555555;
+}
+
+.hero input {
+  padding: 10px;
+  width: 50%;
+  max-width: 400px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.youtube-search-container {
+  display: flex;
+  position: absolute;
+  right: 10px;  /* Moves the container 10px from the right side */
+  top: 10px;    /* Optionally set the top position if you want to adjust the vertical position */
+  gap: 5px;
+  margin: 10px auto;
+  max-width: 320px;
+  height: 30px;
+  background: white;
+  padding: 6px;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#youtube-search-input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 10px;
+  background: #f5f5f5;
+  transition: 0.2s;
+}
+
+#youtube-search-input:focus {
+  background: #e0e0e0;
+}
+
+#youtube-search-btn {
+  padding: 8px 14px;
+  border: none;
+  background: #c99738;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: -2px;
+}
+
+/* Videos Section */
+.outlined-container {
+  position: relative;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 100px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.video-wrapper {
+  display: flex;
+  gap: 50px;
+  max-width: 100%;
+  margin-top: -5%;
+  margin-bottom: -5%;
+  flex-wrap: wrap;
+}
+
+.video-display {
+  flex: 1;
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.video-display .card {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.video-display video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.video-display iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+}
+
+/* Right: Description */
+.video-description {
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-description h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #fff;
+  font-family: Helvetica;
+}
+
+.video-description p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: Helvetica;
+  text-align: justify;
+}
+
+.video-description button {
+  padding: 10px 20px;
+  background: #c99738;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.video-description button:hover {
+  background: #a5782b;
+}
+
+/* Small Video Cards Section */
+.small-video-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.small-card {
+  width: 23%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.small-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.small-card img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
+
+.small-card h4 {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.library-section {
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.library-section button {
+  background-color: #c99738;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 1.1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.library-section button:hover {
+  background: #a5782b;
+}
+
+.library-section p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: Helvetica;
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.library-section h2{
+  text-align: center;
+  color: #fff;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 10px auto;
+  max-width: 320px;
+  background: white;
+  padding: 6px;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  background: #f5f5f5;
+  transition: 0.2s;
+}
+
+#search-bar:focus {
+  background: #e0e0e0;
+}
+
+#search-btn {
+  padding: 8px 14px;
+  border: none;
+  background: #c99738;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: -2px;
+}
+
+#search-btn:hover {
+  background: #a5782b;
+}
+
+/* Grid Section (Library Section) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+  gap: 10px; 
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+/* Card styling */
+.card {
+  padding: 15px; /* Added some padding for spacing */
+  border-radius: 5px;
+  text-align: center;
+  height: 300px; /* Slightly increased height for better balance */
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image covers the entire area */
+  object-position: center;  /* Centers the image to avoid cropping important parts */
+  border-radius: 8px;
+}
+
+/* library popup styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content container */
+.modal-content {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  width: 80%; /* 80% of the screen width for consistent sizing */
+  max-width: 1200px; /* Optional: max width to avoid it being too large */
+  height: 600px; /* Fixed height */
+  flex-direction: row; /* Change to row to place content side by side */
+  align-items: center;
+  justify-content: space-between; /* Align content with space between */
+  z-index: 1001;
+  position: relative; /* Make modal content relative to position the close button inside the padding */
+}
+
+/* Styling for the image */
+.modal-image {
+  width: 40%; /* Image takes 40% of the space for a bigger image */
+  height: 100%; /* Full height */
+  object-fit: cover;
+  border-radius: 8px;
+  object-position: center;
+  margin-left: 10px;
+}
+
+/* Styling for the text part of the modal */
+.modal-text {
+  width: 55%; /* Text takes 55% of the space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the text */
+  color: #e0e0e0;
+  margin-right: 10px;
+}
+
+/* Text styling for the book details */
+.modal-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.modal-text p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+  text-align: justify; /* Justify the paragraph text */
+}
+
+/* Button styling */
+.modal-text button {
+  background-color: #c99738;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.modal-text button:hover {
+  background-color: #a5782b;
+}
+
+/* Close Button */
+.close-modal-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px; /* Adjust top position inside the padding */
+  right: 10px; /* Adjust right position inside the padding */
+}
+
+.close-modal-btn:hover {
+  background-color: red;
+}
+
+button {
+  margin-top: 5px;
+  padding: 8px 14px;
+  background: #c99738;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #a5782b;
+}
+
+
+.quiz-section {
+  position: center;
+  margin-left: 400px;
+  margin-right: 400px;
+  padding: 100px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.quiz-section h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.quiz-section p {
+  color: #fff;
+  text-align: justify;
+}
+
+#topic {
+  flex: 1;
+  padding: 7px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  background: #f5f5f5;
+  transition: 0.2s;
+}
+
+#quiz-topic-title {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+
+.quiz-section h6 {
+  text-align: justify;
+}
+
+/* Modal styles */
+/* Modal background (overlay) */
+.quiz-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content container */
+.quiz-modal-content {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  width: 80%; /* 80% of the screen width */
+  max-width: 1200px; /* Optional: max width */
+  height: 600px; /* Fixed height */
+  flex-direction: column; /* Stack content vertically */
+  align-items: stretch; /* Ensure the form takes up full width */
+  justify-content: flex-start; /* Stack content from top */
+  z-index: 1001;
+  position: relative; /* For close button positioning */
+  overflow: hidden;
+}
+
+/* Close button positioning */
+.quiz-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.quiz-modal-content form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding-right: 10px;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  scrollbar-width: thin;
+  height: calc(100% - 40px); /* Allow form to take up all space minus padding */
+  padding: 100px;
+}
+
+/* Adjust buttons */
+.quiz-modal form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #c99738;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 20%; /* Make buttons full-width */
+}
+
+.quiz-modal form button:hover {
+  background-color: #a5782b;
+}
+
+/* Style the quiz options */
+.quiz-modal form p {
+  margin: 10px 0;
+  color: white; /* Ensure text is readable */
+}
+
+/* Aligning the quiz options (choices) */
+.quiz-modal form label {
+  display: flex;
+  align-items: center; /* Align the radio button and text */
+  margin-bottom: 8px; /* Add space between each option */
+  color: white;
+  justify-content: flex-start; /* Align to the left */
+}
+
+.quiz-modal form input[type="radio"] {
+  margin-right: 10px; /* Space between radio button and option text */
+  cursor: pointer;
+  margin-left: 0; /* Ensure radio button is left-aligned */
+}
+
+/* Style answers with green for correct and red for incorrect */
+.answer.correct {
+  color: green;
+}
+
+.answer.incorrect {
+  color: red;
+}
+
+/* About Us Section */
+#about {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 4em 2em;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  margin: 2em auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+#about h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+#about p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin: 0 auto 1.5em;
+  max-width: 900px;
+}
+
+#about p:last-of-type {
+  margin-bottom: 0;
+}
+
+#about button {
+  background-color: #ffffff;
+  color: #4caf50;
+  font-weight: bold;
+  border: none;
+  padding: 0.8em 2em;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#about button:hover {
+  background-color: #e8f5e9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fireflies */
+.firefly-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.firefly {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 100, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 100, 1);
+  animation: fly 10s linear infinite, fade 3s ease-in-out infinite alternate;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(calc(100vw - 50px), calc(100vh - 50px));
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
